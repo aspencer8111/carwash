@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518175147) do
+ActiveRecord::Schema.define(version: 20170518175709) do
 
   create_table "vehicles", force: :cascade do |t|
     t.string   "plate"
     t.integer  "type"
     t.boolean  "mud_in_bed"
     t.boolean  "bed_up"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "washes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
