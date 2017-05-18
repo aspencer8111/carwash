@@ -1,1 +1,15 @@
-<h1>Vehicles</h1>
+%h1 Vehicles
+%table
+  %thead
+    %tr
+      %td Plate
+      %td Style
+      %td Mud In Bed?
+      %td Bed Up?
+  %tbody
+    %tr
+      -@vehicles.each do |vehicle|
+        %td=vehicle.plate
+        %td=vehicle.style
+        %td=vehicle.mud_in_bed
+        %td=vehicle.bed_up
