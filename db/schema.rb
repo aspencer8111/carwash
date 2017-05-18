@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518180516) do
+ActiveRecord::Schema.define(version: 20170518181755) do
 
-  create_table "transactions", force: :cascade do |t|
+  create_table "charges", force: :cascade do |t|
     t.integer  "vehicle_id"
     t.integer  "wash_id"
     t.decimal  "charge"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["vehicle_id"], name: "index_transactions_on_vehicle_id"
-    t.index ["wash_id"], name: "index_transactions_on_wash_id"
+    t.index ["vehicle_id"], name: "index_charges_on_vehicle_id"
+    t.index ["wash_id"], name: "index_charges_on_wash_id"
   end
 
   create_table "vehicles", force: :cascade do |t|
     t.string   "plate"
-    t.integer  "type"
+    t.integer  "style"
     t.boolean  "mud_in_bed"
     t.boolean  "bed_up"
     t.datetime "created_at", null: false
