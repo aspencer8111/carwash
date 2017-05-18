@@ -1,15 +1,27 @@
-%h1 Vehicles
+%h1 Listing vehicles
+
 %table
   %thead
     %tr
-      %td Plate
-      %td Style
-      %td Mud In Bed?
-      %td Bed Up?
+      %th Plate
+      %th Style
+      %th Mud in bed
+      %th Bed up
+      %th
+      %th
+      %th
+
   %tbody
-    %tr
-      -@vehicles.each do |vehicle|
-        %td=vehicle.plate
-        %td=vehicle.style
-        %td=vehicle.mud_in_bed
-        %td=vehicle.bed_up
+    - @vehicles.each do |vehicle|
+      %tr
+        %td= vehicle.plate
+        %td= vehicle.style
+        %td= vehicle.mud_in_bed
+        %td= vehicle.bed_up
+        %td= link_to 'Show', vehicle
+        %td= link_to 'Edit', edit_vehicle_path(vehicle)
+        %td= link_to 'Destroy', vehicle, :method => :delete, id: 'destroy'
+
+%br
+
+= link_to 'New vehicle', new_vehicle_path

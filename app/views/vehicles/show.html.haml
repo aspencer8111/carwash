@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Plate:
+  = @vehicle.plate
+%p
+  %b Style:
+  = @vehicle.style
+%p
+  %b Mud in bed:
+  = @vehicle.mud_in_bed
+%p
+  %b Bed up:
+  = @vehicle.bed_up
+
+= link_to 'Edit', edit_vehicle_path(@vehicle)
+\|
+= link_to 'Back', vehicles_path
