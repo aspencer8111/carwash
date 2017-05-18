@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518175709) do
+ActiveRecord::Schema.define(version: 20170518180516) do
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer  "vehicle_id"
+    t.integer  "wash_id"
+    t.decimal  "charge"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vehicle_id"], name: "index_transactions_on_vehicle_id"
+    t.index ["wash_id"], name: "index_transactions_on_wash_id"
+  end
 
   create_table "vehicles", force: :cascade do |t|
     t.string   "plate"
