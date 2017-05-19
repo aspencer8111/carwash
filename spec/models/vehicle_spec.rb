@@ -8,6 +8,7 @@ RSpec.describe Vehicle, type: :model do
 
   it { should validate_presence_of(:plate) }
   it { should validate_presence_of(:style) }
+  it { should validate_uniqueness_of(:plate) }
 
   it { should have_many(:charges) }
   it { should have_many(:washes).through(:charges) }
