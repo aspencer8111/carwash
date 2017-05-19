@@ -7,7 +7,6 @@ end
 
 
 gem 'rails', '~> 5.0.3'
-gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -20,7 +19,13 @@ gem 'factory_girl_rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'byebug', platform: :mri
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 group :development do
