@@ -1,24 +1,11 @@
-# README
+# Carwash
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A carwash application for tracking vehicles and washes.
 
-Things you may want to cover:
 
-* Ruby version
+## Setup
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Fork/clone
+1. Bundle
+1. Migrate
+1. Seed
