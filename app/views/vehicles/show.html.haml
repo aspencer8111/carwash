@@ -13,6 +13,8 @@
   %b Bed up:
   = @vehicle.bed_up
 
+= link_to 'Wash', new_vehicle_charge_path(@vehicle) if @vehicle.bed_up
+\|
 = link_to 'Edit', edit_vehicle_path(@vehicle)
 \|
 = link_to 'Back', vehicles_path
