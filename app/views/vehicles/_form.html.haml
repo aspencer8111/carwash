@@ -5,18 +5,22 @@
       %ul
         - @vehicle.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :plate
-    = f.text_field :plate
-  .field
-    = f.label :style
-    = f.select :style, [ ['Car', :car], ['Truck', :truck] ]
-  .field
-    = f.label :mud_in_bed
-    = f.check_box :mud_in_bed
-  .field
-    = f.label :bed_up
-    = f.check_box :bed_up
-  .actions
-    = f.submit 'Save', id: 'Save'
+  .form-group
+    .field
+      = f.label :plate
+      = f.text_field :plate
+  .form-group
+    .field
+      = f.label :style
+      = f.select :style, [ ['Car', :car], ['Truck', :truck] ]
+  .form-group
+    .field
+      = f.label :mud_in_bed
+      = f.check_box :mud_in_bed
+  .form-group
+    .field
+      = f.label :bed_up
+      = f.check_box :bed_up
+  .form-group
+    .actions
+      = f.submit 'Save', id: 'Save', class: 'btn btn-default'

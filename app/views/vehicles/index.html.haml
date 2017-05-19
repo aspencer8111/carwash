@@ -4,14 +4,13 @@
 
 %p Select a car that you would like to wash.
 
-%table
+%table.table
   %thead
     %tr
       %th Plate
       %th Style
       %th Mud in bed
       %th Bed up
-      %th
       %th
       %th
 
@@ -29,4 +28,5 @@
 
 %p
 New customer or Don't see your car here?
-= link_to "Add it", new_vehicle_path
+%br
+= link_to "Add it", new_vehicle_path, class: 'btn btn-primary'

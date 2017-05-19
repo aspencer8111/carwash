@@ -5,11 +5,13 @@
       %ul
         - @wash.errors.full_messages.each do |msg|
           %li= msg
-  .field
-    =f.hidden_field :vehicle_id, value: @wash.vehicle.id
-  .field
-    The Total Cost will be
-    =@wash.charge
-
-  .actions
-    = f.submit 'Save', id: 'Save'
+  .form-group
+    .field
+      =f.hidden_field :vehicle_id, value: @wash.vehicle.id
+  .form-group
+    .field
+      The Total Cost will be
+      =@wash.charge
+  .form-group
+    .actions
+      = f.submit 'Save', id: 'Save', class: 'btn btn-default'
