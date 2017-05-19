@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519124415) do
-
-  create_table "charges", force: :cascade do |t|
-    t.integer  "vehicle_id"
-    t.decimal  "charge"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["vehicle_id"], name: "index_charges_on_vehicle_id"
-  end
+ActiveRecord::Schema.define(version: 20170519124914) do
 
   create_table "vehicles", force: :cascade do |t|
     t.string   "plate"
@@ -27,6 +19,14 @@ ActiveRecord::Schema.define(version: 20170519124415) do
     t.boolean  "bed_up"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "washes", force: :cascade do |t|
+    t.integer  "vehicle_id"
+    t.decimal  "charge"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["vehicle_id"], name: "index_washes_on_vehicle_id"
   end
 
 end

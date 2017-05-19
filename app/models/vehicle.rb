@@ -2,7 +2,7 @@ class Vehicle < ApplicationRecord
   BASE_CAR_RATE = 5
   BASE_TRUCK_RATE = 10
 
-  has_many :charges
+  has_many :washes
 
   enum style: [:car, :truck]
 
