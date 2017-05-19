@@ -1,4 +1,8 @@
 class WashesController < ApplicationController
+  def index
+    @washes = Wash.includes(:vehicle).all
+  end
+
   def new
     redirect_to vehicle, notice: 'Unable to wash. Bed is down' if !vehicle.bed_up
     @wash = vehicle.washes.new(charge: vehicle.calculate_charge)

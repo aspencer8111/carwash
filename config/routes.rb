@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'vehicles#index'
   resources :vehicles do
-    resources :washes, only: [:index, :new]
+    resources :washes, only: :new
   end
-  resources :washes, only: :create
+  resources :washes, only: [:index, :create]
 end

@@ -1,0 +1,21 @@
+%h1 Listing recent washes
+
+%table
+  %thead
+    %tr
+      %th Car
+      %th Charge
+      %th Date
+
+  %tbody
+    - @washes.each do |wash|
+      %tr
+        %td= link_to wash.vehicle.plate, wash.vehicle
+        %td= wash.charge
+        %td= wash.created_at.strftime("%m/%d/%Y")
+
+%br
+
+%p
+Create a new wash:
+= link_to "New Wash?", vehicles_path
