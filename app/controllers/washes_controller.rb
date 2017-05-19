@@ -1,16 +1,17 @@
 class WashesController < ApplicationController
   def new
-    redirect_to vehicle,
-      notice: 'Unable to wash trucks with their bed down' if !vehicle.bed_up
-
-    @wash = vehicle.washes.new(charge: vehicle.base_rate + vehicle.mud_surcharge)
+    redirect_to vehicle, notice: 'Unable to wash. Bed is down' if !vehicle.bed_up
+    @wash = vehicle.washes.new(charge: vehicle.calculate_charge)
   end
 
   def create
     vehicle = Vehicle.find(params[:wash][:vehicle_id])
     @wash = vehicle.washes.new(charge: vehicle.base_rate + vehicle.mud_surcharge)
-    @wash.save
-    redirect_to root_path, notice: "Car washed!"
+    if @wash.save
+      redirect_to vehicles_path, notice: 'Car was successfully washed!'
+    else
+      render :new
+    end
   end
 
   private
