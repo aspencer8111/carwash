@@ -5,4 +5,5 @@ class Vehicle < ApplicationRecord
   enum style: [:car, :truck]
 
   validates :plate, :style, presence: true
+  validates :plate, uniqueness: true
 end
