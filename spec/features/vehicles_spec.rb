@@ -15,7 +15,7 @@ feature 'vehicles #create' do
     scenario 'creates a new vehicle' do
       visit new_vehicle_path
       fill_in :vehicle_plate, with: 'aaaa'
-      select 'Car', from: :vehicle_style
+      select 'Truck', from: :vehicle_style
       find("#Save").click
       expect(page).to have_content('aaaa')
     end
