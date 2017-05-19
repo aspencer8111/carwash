@@ -15,7 +15,10 @@ class WashesController < ApplicationController
   def create
     vehicle = Vehicle.find(params[:wash][:vehicle_id])
     @wash = vehicle.washes.new(charge: vehicle.calculate_charge)
-    if @wash.save
+
+    if vehicle.plate == '1111111'
+      redirect_to root_path, notice: 'Car stolen and cannot be washed!'
+    elsif @wash.save
       redirect_to vehicles_path, notice: 'Car was successfully washed!'
     else
       render :new

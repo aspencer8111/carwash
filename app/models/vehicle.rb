@@ -11,6 +11,12 @@ class Vehicle < ApplicationRecord
   # Validations
   validates :plate, :style, presence: true
   validates :plate, uniqueness: true
+  validates :bed_up,
+            acceptance: { message: ': Cars do not have beds. Therefore bed up must be marked true' },
+            if: :is_car?
+  validates :mud_in_bed,
+            absence: { message:  ': Cars do not have beds. Therefore mud must be marked false' },
+            if: :is_car?
 
   # Style
   enum style: [:car, :truck]
@@ -23,6 +29,10 @@ class Vehicle < ApplicationRecord
   def base_rate
     return BASE_CAR_RATE if self.car?
     return BASE_TRUCK_RATE if self.truck?
+  end
+
+  def is_car?
+    self.car?
   end
 
   def mud_surcharge
