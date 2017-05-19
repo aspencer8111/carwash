@@ -30,6 +30,6 @@ class Vehicle < ApplicationRecord
   end
 
   def return_customer_discount
-    self.washes.count > 1 ? RETURN_CUSTOMER_DISCOUNT_MULTIPLIER : 1
+    self.washes.count >= 1 ? RETURN_CUSTOMER_DISCOUNT_MULTIPLIER : 1
   end
 end
