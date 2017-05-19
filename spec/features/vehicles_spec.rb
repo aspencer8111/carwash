@@ -15,7 +15,7 @@ feature 'vehicles #create' do
     scenario 'creates a new vehicle' do
       visit new_vehicle_path
       fill_in :vehicle_plate, with: 'aaaa'
-      fill_in :vehicle_style, with: 'car'
+      select 'Car', from: :vehicle_style
       find("#Save").click
       expect(page).to have_content('aaaa')
     end
@@ -25,7 +25,7 @@ feature 'vehicles #create' do
     scenario 'returns an eror' do
       visit new_vehicle_path
       find("#Save").click
-      expect(page).to have_content('errors')
+      expect(page).to have_content('error')
     end
   end
 end

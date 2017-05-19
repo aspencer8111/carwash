@@ -11,7 +11,7 @@
     = f.text_field :plate
   .field
     = f.label :style
-    = f.text_field :style
+    = f.select :style, [ ['Car', :car], ['Truck', :truck] ]
   .field
     = f.label :mud_in_bed
     = f.check_box :mud_in_bed
