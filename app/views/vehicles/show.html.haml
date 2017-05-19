@@ -18,3 +18,17 @@
 = link_to 'Edit', edit_vehicle_path(@vehicle)
 \|
 = link_to 'Back', vehicles_path
+
+%hr Transaction History
+
+%table
+  %thead
+    %tr
+      %th Date
+      %th Charge
+
+  %tbody
+    - @vehicle.washes.each do |wash|
+      %tr
+        %td= link_to wash.created_at.strftime("%m/%d/%Y"), wash
+        %td= wash.charge

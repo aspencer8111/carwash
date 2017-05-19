@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @wash.created_at.strftime("%m/%d/%Y")
+%p
+  %b Charge:
+  = @wash.charge
+%p
+  %b Vehicle:
+  = @wash.vehicle.plate
+
+= link_to 'Back', vehicles_path
